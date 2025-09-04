@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogger</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to KIN Blogger</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <h2>Latest Posts</h2>
+            <ul>
+                <div class="row">
+                    <div class="leftcolumn">
+                        <div class="card">
+                        <h2>{{ posts.title }}</h2>
+                        <h5>{{ posts.created_at }}</h5>
+                        <p>{{ posts.content }}</p>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Blogger. All rights reserved.</p>
+    </footer>
+</body>
+</html>
